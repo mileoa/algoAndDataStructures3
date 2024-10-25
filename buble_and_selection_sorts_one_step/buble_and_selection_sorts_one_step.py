@@ -31,4 +31,4 @@ def BubbleSortStep(array: List[int]) -> bool:
         if el > array[i + 1]:
             array[i], array[i + 1] = array[i + 1], el
             was_switch = True
-    return was_switch
+    return not was_switch
