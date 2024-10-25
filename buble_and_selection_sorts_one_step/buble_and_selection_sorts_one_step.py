@@ -24,4 +24,11 @@ def SelectionSortStep(array: List[int], i: int) -> None:
 
 
 def BubbleSortStep(array: List[int]) -> bool:
-    return False
+    was_switch: bool = False
+    for i, el in enumerate(array):
+        if i == len(array) - 1:
+            continue
+        if el > array[i + 1]:
+            array[i], array[i + 1] = array[i + 1], el
+            was_switch = True
+    return was_switch
