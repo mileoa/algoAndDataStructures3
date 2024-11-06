@@ -32,15 +32,9 @@ def ArrayChunk(M: List[int], L: int, R: int) -> int:
 
 
 def KthOrderStatisticsStep(Array: List[int], L: int, R: int, k: int) -> List[int]:
-    if L > R:
-        return [L, R]
     supporting_element_index: int = ArrayChunk(Array, L, R)
     if k == supporting_element_index:
         return [L, R]
-    new_right_index: int = R
-    new_left_index: int = L
     if supporting_element_index > k:
-        new_right_index = supporting_element_index - 1
-    if supporting_element_index < k:
-        new_left_index = supporting_element_index + 1
-    return KthOrderStatisticsStep(Array, new_left_index, new_right_index, k)
+        return [L, supporting_element_index - 1]
+    return [supporting_element_index + 1, R]
