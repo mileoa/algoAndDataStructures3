@@ -25,6 +25,9 @@ class KthOrderStatisticsStepTests(unittest.TestCase):
         self.assertEqual(KthOrderStatisticsStep(array, 0, 0, 0), [0, 0])
 
         array: List[int] = [3, 5, 2, 4, 1]
+        self.assertEqual(KthOrderStatisticsStep(array, 3, 3, 3), [3, 3])
+
+        array: List[int] = [3, 5, 2, 4, 1]
         self.assertEqual(KthOrderStatisticsStep(array, 0, 0, 1), [1, 0])
 
 

@@ -6,7 +6,7 @@ def ArrayChunk(M: List[int], L: int, R: int) -> int:
     supporting_element: int = M[supporting_element_index]
     i1: int = L
     i2: int = R
-    while True:
+    while i1 <= i2:
         if M[i1] < supporting_element:
             i1 += 1
             continue
