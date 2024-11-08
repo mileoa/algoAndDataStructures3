@@ -110,8 +110,8 @@ class Heap:
 class HeapSort:
 
     def __init__(self, array: List[int]) -> None:
-        self.Heap: Heap = Heap()
-        self.Heap.MakeHeap(array)
+        self.HeapObject: Heap = Heap()
+        self.HeapObject.MakeHeap(array)
 
     def GetNextMax(self) -> int:
-        return self.Heap.GetMax()
+        return self.HeapObject.GetMax()
