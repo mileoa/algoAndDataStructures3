@@ -1,10 +1,10 @@
-from typing import List
+from typing import List, Optional
 
 
 class ksort:
 
     def __init__(self) -> None:
-        self.items: List[str] = [None] * 800
+        self.items: List[Optional[str]] = [None] * 800
         self.ITEMS_OFFSET: dict[str, int] = {
             "a": 0,
             "b": 100,
