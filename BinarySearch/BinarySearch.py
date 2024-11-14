@@ -25,5 +25,5 @@ class BinarySearch:
             return None
         return None
 
-    def GetResult(self) -> int:
+    def GetResult(self) -> str:
         return self.search_result
