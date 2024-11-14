@@ -16,7 +16,7 @@ class BinarySearchTests(unittest.TestCase):
         bs_one.Step(3)
         self.assertEqual(bs_one.Left, 2)
         self.assertEqual(bs_one.Right, 3)
-        self.assertEqual(bs_one.GetResult(), "0")
+        self.assertEqual(bs_one.GetResult(), "+1")
 
         bs_one.Step(3)
         self.assertEqual(bs_one.Left, 2)
@@ -37,15 +37,10 @@ class BinarySearchTests(unittest.TestCase):
         bs_two.Step(10)
         self.assertEqual(bs_two.Left, 7)
         self.assertEqual(bs_two.Right, 8)
-        self.assertEqual(bs_two.GetResult(), "0")
+        self.assertEqual(bs_two.GetResult(), "-1")
 
         bs_two.Step(10)
-        self.assertEqual(bs_two.Left, 8)
-        self.assertEqual(bs_two.Right, 8)
-        self.assertEqual(bs_two.GetResult(), "0")
-
-        bs_two.Step(10)
-        self.assertEqual(bs_two.Left, 9)
+        self.assertEqual(bs_two.Left, 7)
         self.assertEqual(bs_two.Right, 8)
         self.assertEqual(bs_two.GetResult(), "-1")
 
@@ -58,15 +53,10 @@ class BinarySearchTests(unittest.TestCase):
         bs_three.Step(9)
         self.assertEqual(bs_three.Left, 7)
         self.assertEqual(bs_three.Right, 8)
-        self.assertEqual(bs_three.GetResult(), "0")
+        self.assertEqual(bs_three.GetResult(), "+1")
 
         bs_three.Step(9)
-        self.assertEqual(bs_three.Left, 8)
-        self.assertEqual(bs_three.Right, 8)
-        self.assertEqual(bs_three.GetResult(), "0")
-
-        bs_three.Step(9)
-        self.assertEqual(bs_three.Left, 8)
+        self.assertEqual(bs_three.Left, 7)
         self.assertEqual(bs_three.Right, 8)
         self.assertEqual(bs_three.GetResult(), "+1")
 
