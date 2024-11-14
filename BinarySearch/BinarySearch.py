@@ -15,7 +15,7 @@ class BinarySearch:
         mid: int = (self.Left + self.Right) // 2
 
         if self.sorted_array[mid] == N:
-            self.search_result = +1
+            self.search_result = 1
             return None
 
         if self.sorted_array[mid] < N:
@@ -25,7 +25,7 @@ class BinarySearch:
 
         if self.Left == self.Right:
             if self.sorted_array[self.Left] == N:
-                self.search_result = +1
+                self.search_result = 1
             if self.sorted_array[self.Left] != N:
                 self.search_result = -1
             return None
