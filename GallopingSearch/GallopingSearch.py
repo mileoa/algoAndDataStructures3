@@ -40,26 +40,26 @@ class BinarySearch:
     def GetResult(self) -> int:
         return self.search_result
 
-    @staticmethod
-    def calculate_galloping_index(i: int) -> int:
-        index: int = 2**i - 1
-        return index
 
-    @staticmethod
-    def GallopingSearch(sorted_array: List[int], number: int) -> bool:
-        i: int = 1
-        index: int = BinarySearch.calculate_galloping_index(i)
-        while index < len(sorted_array) - 1 and sorted_array[index] <= number:
-            if sorted_array[index] == number:
-                return True
-            i += 1
-            index = BinarySearch.calculate_galloping_index(i)
-            index = min(len(sorted_array) - 1, index)
+def calculate_galloping_index(i: int) -> int:
+    index: int = 2**i - 1
+    return index
 
-        binary_search: BinarySearch = BinarySearch(sorted_array)
-        binary_search.Left = BinarySearch.calculate_galloping_index(i - 1)
-        binary_search.Right = index
-        while binary_search.GetResult() == 0:
-            binary_search.Step(number)
 
-        return binary_search.GetResult() == 1
+def GallopingSearch(sorted_array: List[int], number: int) -> bool:
+    i: int = 1
+    index: int = calculate_galloping_index(i)
+    while index < len(sorted_array) - 1 and sorted_array[index] <= number:
+        if sorted_array[index] == number:
+            return True
+        i += 1
+        index = calculate_galloping_index(i)
+        index = min(len(sorted_array) - 1, index)
+
+    binary_search: BinarySearch = BinarySearch(sorted_array)
+    binary_search.Left = calculate_galloping_index(i - 1)
+    binary_search.Right = index
+    while binary_search.GetResult() == 0:
+        binary_search.Step(number)
+
+    return binary_search.GetResult() == 1
